@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank You — Your Ticket is Confirmed</title>
+<link rel="stylesheet" href="/css/style.css" />
+
+<!-- Runtime config (edgeConfigId, decisionScope, mockMode) -->
+<script src="/config.js"></script>
+
+<!-- Adobe Web SDK (Alloy) -->
+<script>
+!function(n,o){o.forEach(function(o){n[o]||((n.__alloyNS=n.__alloyNS||[]).push(o),n[o]=function(){var u=arguments;return new Promise(function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}(window,["alloy"]);
+</script>
+<script src="https://cdn1.adoberesources.net/alloy/2.24.0/alloy.min.js" async></script>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="confirm-header">
+    <div class="check-badge">✓</div>
+    <h1>Booking confirmed</h1>
+    <p class="sub">Order #<span id="orderId">ORD-POC-0001</span></p>
+  </header>
+
+  <section class="ticket-card">
+    <div class="route">
+      <span class="city">Mechelen</span>
+      <span class="arrow">→</span>
+      <span class="city">Brussels Airport</span>
+    </div>
+    <div class="meta">
+      <span>One-way</span>
+      <span>&middot;</span>
+      <span id="journeyDate">05 Aug 2026, 09:15</span>
+    </div>
+  </section>
+
+  <!-- The AJO code-based experience renders here -->
+  <section id="personalizationSlot" class="personalization-slot" hidden></section>
+
+  <section class="controls">
+    <button id="fireEventBtn" class="btn primary">1. Fire purchase event</button>
+    <button id="fetchPropositionBtn" class="btn" disabled>2. Reload &amp; fetch decision</button>
+  </section>
+
+  <section class="log-panel">
+    <div class="log-header">Debug log <span id="mockBadge" class="badge"></span></div>
+    <pre id="log"></pre>
+  </section>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
